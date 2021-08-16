@@ -12,8 +12,15 @@ namespace crud_dotnet.Models
     {
         [Key]
         public int customerid { get; set; }
+
+        [Required(ErrorMessage = "The customer name is required")]
         public string customername { get; set; }
+
+        [Required(ErrorMessage = "The email address is required")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Invalid Email Address")]
         public string email { get; set; }
+
+        [Required(ErrorMessage = "The salary is required")]
         public int salary { get; set; }
     }
 }
